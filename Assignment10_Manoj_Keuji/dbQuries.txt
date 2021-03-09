@@ -1,0 +1,16 @@
+CREATE TABLE `manoj`.`contact` (
+  `idcontact` INT NOT NULL,
+  `contacName` VARCHAR(45) NOT NULL,
+  `mail` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idcontact`));
+
+
+CREATE TABLE `manoj`.`connumber` (
+  `idconNumber` INT NOT NULL,
+  `conNo` BIGINT NULL,
+  INDEX `idConNumber_idx` (`idconNumber` ASC) VISIBLE,
+  CONSTRAINT `idConNumber`
+    FOREIGN KEY (`idconNumber`)
+    REFERENCES `manoj`.`contact` (`idcontact`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
